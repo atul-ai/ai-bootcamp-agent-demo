@@ -89,5 +89,5 @@ The application uses:
 3. Submit a pull request
 
 ## License
-
-[Specify your license] 
+The app is built with videcoding, libraries used could be copyrighted. Review the licenses for your usecase before you use them.
+All other files are covered by the MIT license, see [LICENSE](https://github.com/atul-ai/ai-bootcamp-agent-demo/blob/main/LICENSE). 
