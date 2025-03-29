@@ -19,7 +19,7 @@ An AI-powered assistant for searching, downloading, and summarizing academic pap
 
 1. Clone the repository
    ```bash
-   git clone git@github.com:atul-ai/ai-bootcamp-agent-demo.git
+   git clone https://github.com/atul-ai/ai-bootcamp-agent-demo.git
    cd AI\ Agent\ Demo
    ```
 
