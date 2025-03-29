@@ -48,9 +48,11 @@ coverage.xml
 *.swo
 
 # Project specific
-data/papers/
-data/temp/
-data/vectors/
+arxiv_assistant/data/papers/*
+arxiv_assistant/data/vectordb/*
+data/papers/*
+data/temp/*
+data/vectors/*
 logs/
 *.log
 .env
