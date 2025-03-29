@@ -19,13 +19,14 @@ An AI-powered assistant for searching, downloading, and summarizing academic pap
 
 1. Clone the repository
    ```bash
+   mkdir ai_bootcamp_demo && cd ai_bootcamp_demo
+
    # HTTPS (recommended for most users)
    git clone https://github.com/atul-ai/ai-bootcamp-agent-demo.git
    
    # Or using SSH (if you have SSH keys configured)
    # git clone git@github.com:atul-ai/ai-bootcamp-agent-demo.git
    
-   cd AI\ Agent\ Demo
    ```
 
 2. Create and activate a virtual environment
@@ -36,7 +37,7 @@ An AI-powered assistant for searching, downloading, and summarizing academic pap
 
 3. Install dependencies
    ```bash
-   pip install -r requirements.txt
+   pip install -r arxiv_assistant/requirements.txt
    ```
 
 4. Set up environment variables
