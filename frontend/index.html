@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>arXiv Assistant</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>arXiv Assistant</h1>
+            <div class="status-indicator">
+                <span id="status-dot"></span>
+                <span id="status-text">Checking API status...</span>
+            </div>
+        </header>
+
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="search">Paper Search</button>
+            <button class="tab-btn" data-tab="assistant">Research Assistant</button>
+            <button class="tab-btn" data-tab="paper">Paper Details</button>
+        </div>
+
+        <div class="tab-content active" id="search-tab">
+            <div class="search-container">
+                <h2>Search for Papers</h2>
+                <div class="search-form">
+                    <input type="text" id="search-input" placeholder="Enter search query (e.g., machine learning, quantum computing)">
+                    <div class="search-options">
+                        <div class="form-group">
+                            <label for="search-limit">Results:</label>
+                            <select id="search-limit">
+                                <option value="3">3</option>
+                                <option value="5" selected>5</option>
+                                <option value="10">10</option>
+                                <option value="20">20</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="search-model">Model:</label>
+                            <select id="search-model">
+                                <option value="groq">Groq (Llama-3)</option>
+                                <option value="sambanova">Sambanova (DeepSeek-R1)</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button id="search-btn">Search</button>
+                </div>
+            </div>
+            <div class="results-container" id="search-results">
+                <!-- Search results will be displayed here -->
+            </div>
+        </div>
+
+        <div class="tab-content" id="assistant-tab">
+            <div class="assistant-container">
+                <h2>Research Assistant</h2>
+                <div class="assistant-form">
+                    <textarea id="query-input" placeholder="Ask a question about research papers (e.g., 'Find papers about deep learning in medicine' or 'Summarize paper 2305.13245')"></textarea>
+                    <div class="assistant-options">
+                        <div class="form-group">
+                            <label for="query-task">Task:</label>
+                            <select id="query-task">
+                                <option value="auto" selected>Auto-detect</option>
+                                <option value="search">Search</option>
+                                <option value="summarize">Summarize</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="query-model">Model:</label>
+                            <select id="query-model">
+                                <option value="groq">Groq (Llama-3)</option>
+                                <option value="sambanova">Sambanova (DeepSeek-R1)</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button id="query-btn">Submit</button>
+                </div>
+            </div>
+            <div class="conversation-container">
+                <div id="conversation">
+                    <!-- Conversation history will be displayed here -->
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-content" id="paper-tab">
+            <div class="paper-container">
+                <h2>Paper Details & Summary</h2>
+                <div class="paper-lookup-form">
+                    <div class="form-group wide">
+                        <label for="paper-id-input">Paper ID:</label>
+                        <input type="text" id="paper-id-input" placeholder="Enter arXiv paper ID (e.g., 2303.08774)">
+                    </div>
+                    <div class="form-group">
+                        <label for="summary-model">Model:</label>
+                        <select id="summary-model">
+                            <option value="groq">Groq (Llama-3)</option>
+                            <option value="sambanova">Sambanova (DeepSeek-R1)</option>
+                        </select>
+                    </div>
+                    <div class="button-group">
+                        <button id="get-paper-btn">Get Paper</button>
+                        <button id="get-summary-btn">Get Summary</button>
+                    </div>
+                </div>
+                
+                <div class="paper-title-search">
+                    <h3>Or Search by Title</h3>
+                    <div class="title-search-form">
+                        <div class="form-group wide">
+                            <input type="text" id="paper-title-input" placeholder="Enter paper title (e.g., 'Attention Is All You Need')">
+                        </div>
+                        <div class="button-group">
+                            <button id="search-title-btn">Search by Title</button>
+                            <button id="search-summarize-btn">Search & Summarize</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="paper-details-container" id="paper-details">
+                <!-- Paper details will be displayed here -->
+            </div>
+            <div class="paper-summary-container" id="paper-summary">
+                <!-- Paper summary will be displayed here -->
+            </div>
+        </div>
+
+        <footer>
+            <p>arXiv Assistant - Powered by LLM Agents</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html> 
